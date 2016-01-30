@@ -1,4 +1,4 @@
-package fr.craftinglabs.pi.matrix.io;   
+package fr.craftinglabs.pi.matrix.io;
 
 import com.pi4j.io.gpio.*;
 import com.pi4j.wiringpi.Shift;
@@ -32,7 +32,6 @@ public class MatrixGPIO implements MatrixIO {
         counterClock.setShutdownOptions(true, PinState.LOW);
         counterReset.setShutdownOptions(true, PinState.LOW);
     }
-
 
     public MatrixGPIO(GpioPinDigitalOutput shiftData, GpioPinDigitalOutput shiftClock, GpioPinDigitalOutput shiftLatch, GpioPinDigitalOutput counterClock, GpioPinDigitalOutput counterReset) {
         this.shiftData = shiftData;

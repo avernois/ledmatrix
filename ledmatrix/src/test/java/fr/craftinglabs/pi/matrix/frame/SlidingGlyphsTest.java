@@ -1,11 +1,12 @@
-package fr.craftinglabs.pi.matrix;
+package fr.craftinglabs.pi.matrix.frame;
 
+import fr.craftinglabs.pi.matrix.Size;
 import fr.craftinglabs.pi.matrix.font.Glyph;
 import org.junit.Test;
 
 import java.util.Iterator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class SlidingGlyphsTest {
 

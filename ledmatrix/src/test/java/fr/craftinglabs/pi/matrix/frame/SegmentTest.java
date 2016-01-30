@@ -1,4 +1,4 @@
-package fr.craftinglabs.pi.matrix;
+package fr.craftinglabs.pi.matrix.frame;
 
 import org.junit.Test;
 

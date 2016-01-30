@@ -1,7 +1,9 @@
-package fr.craftinglabs.pi.matrix;
+package fr.craftinglabs.pi.matrix.frame;
 
+import fr.craftinglabs.pi.matrix.Size;
 import fr.craftinglabs.pi.matrix.font.Glyph;
 import fr.craftinglabs.pi.matrix.font.Line;
+import fr.craftinglabs.pi.matrix.frame.Frame;
 
 
 import java.util.Iterator;

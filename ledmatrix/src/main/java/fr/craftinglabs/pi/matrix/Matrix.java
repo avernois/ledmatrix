@@ -1,5 +1,8 @@
 package fr.craftinglabs.pi.matrix;
 
+import fr.craftinglabs.pi.matrix.frame.Frame;
+import fr.craftinglabs.pi.matrix.frame.Segment;
+import fr.craftinglabs.pi.matrix.frame.SegmentedLine;
 import fr.craftinglabs.pi.matrix.io.MatrixGPIO;
 import fr.craftinglabs.pi.matrix.io.MatrixIO;
 

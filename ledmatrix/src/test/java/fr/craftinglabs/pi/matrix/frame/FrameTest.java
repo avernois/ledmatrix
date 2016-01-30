@@ -1,10 +1,14 @@
-package fr.craftinglabs.pi.matrix;
+package fr.craftinglabs.pi.matrix.frame;
 
 import fr.craftinglabs.pi.matrix.font.Line;
+import fr.craftinglabs.pi.matrix.frame.Frame;
+import fr.craftinglabs.pi.matrix.frame.SegmentedLine;
+import org.junit.Assert;
 import org.junit.Test;
+
 import static org.junit.Assert.*;
+
 import java.util.Arrays;
-import java.util.List;
 
 public class FrameTest {
 
@@ -35,14 +39,14 @@ public class FrameTest {
     @Test
     public void should_be_created_from_Lines() {
 
-            Frame frame = new Frame(
-                    new Line("0101010101010101"),
-                    new Line("1010101010101010"));
+        Frame frame = new Frame(
+                new Line("0101010101010101"),
+                new Line("1010101010101010"));
 
-            assertEquals(Arrays.asList(
-                    new SegmentedLine("010101010101010101"),
-                    new SegmentedLine("101010101010101010")),
-                    frame.toLines());
+        assertEquals(Arrays.asList(
+                new SegmentedLine("010101010101010101"),
+                new SegmentedLine("101010101010101010")),
+                frame.toLines());
 
     }
 }

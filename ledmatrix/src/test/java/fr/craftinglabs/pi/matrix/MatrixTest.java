@@ -1,5 +1,6 @@
 package fr.craftinglabs.pi.matrix;
 
+import fr.craftinglabs.pi.matrix.frame.Frame;
 import fr.craftinglabs.pi.matrix.io.MatrixIO;
 import org.junit.Test;
 

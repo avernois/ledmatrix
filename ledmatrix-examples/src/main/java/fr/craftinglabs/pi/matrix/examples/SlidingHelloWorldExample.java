@@ -2,7 +2,7 @@ package fr.craftinglabs.pi.matrix.examples;
 
 import fr.craftinglabs.pi.matrix.Matrix;
 import fr.craftinglabs.pi.matrix.Size;
-import fr.craftinglabs.pi.matrix.SlidingGlyphs;
+import fr.craftinglabs.pi.matrix.frame.SlidingGlyphs;
 import fr.craftinglabs.pi.matrix.font.Font6;
 
 public class SlidingHelloWorldExample {
