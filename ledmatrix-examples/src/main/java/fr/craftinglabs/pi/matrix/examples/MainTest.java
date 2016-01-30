@@ -1,6 +1,9 @@
-package fr.craftinglabs.pi.matrix;
+package fr.craftinglabs.pi.matrix.examples;
 
 import com.pi4j.io.gpio.*;
+import fr.craftinglabs.pi.matrix.Matrix;
+import fr.craftinglabs.pi.matrix.Size;
+import fr.craftinglabs.pi.matrix.SlidingGlyphs;
 import fr.craftinglabs.pi.matrix.font.Font6;
 import fr.craftinglabs.pi.matrix.io.ConsoleMatrixIO;
 import fr.craftinglabs.pi.matrix.io.MatrixGPIO;

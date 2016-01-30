@@ -2,7 +2,6 @@ package fr.craftinglabs.pi.matrix.io;
 
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
 import com.pi4j.wiringpi.Shift;
-import fr.craftinglabs.pi.matrix.io.MatrixIO;
 
 public class MatrixGPIO implements MatrixIO {
 
