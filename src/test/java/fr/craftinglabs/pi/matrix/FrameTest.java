@@ -1,5 +1,6 @@
 package fr.craftinglabs.pi.matrix;
 
+import fr.craftinglabs.pi.matrix.font.Line;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Arrays;
@@ -29,5 +30,19 @@ public class FrameTest {
                 new SegmentedLine("010101010101010101"),
                 new SegmentedLine("101010101010101010")),
                 frame.toLines());
+    }
+
+    @Test
+    public void should_be_created_from_Lines() {
+
+            Frame frame = new Frame(
+                    new Line("0101010101010101"),
+                    new Line("1010101010101010"));
+
+            assertEquals(Arrays.asList(
+                    new SegmentedLine("010101010101010101"),
+                    new SegmentedLine("101010101010101010")),
+                    frame.toLines());
+
     }
 }

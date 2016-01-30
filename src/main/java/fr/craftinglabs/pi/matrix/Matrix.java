@@ -21,6 +21,12 @@ public class Matrix {
         }
     }
 
+    public void print(int speed, Iterable<Frame> frames) {
+        for(Frame frame: frames) {
+            print(speed, frame);
+        }
+    }
+
     private void printFrame(Frame frame) {
         for (SegmentedLine line: frame.toLines()) {
             printLine(line);

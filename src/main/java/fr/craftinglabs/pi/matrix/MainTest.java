@@ -1,6 +1,7 @@
 package fr.craftinglabs.pi.matrix;
 
 import com.pi4j.io.gpio.*;
+import fr.craftinglabs.pi.matrix.font.Font6;
 import fr.craftinglabs.pi.matrix.io.ConsoleMatrixIO;
 import fr.craftinglabs.pi.matrix.io.MatrixGPIO;
 
@@ -8,20 +9,10 @@ public class MainTest {
  
     public static void main(String[] args) throws InterruptedException {
 
-        Matrix matrix = initWithConsoleOutput(new Size(10, 32));
+        //Matrix matrix = initWithConsoleOutput(new Size(6, 8));
+        Matrix matrix = initWithGPIOOutput(new Size(6, 8));
 
-        Frame frame = new Frame(new SegmentedLine(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-                new SegmentedLine(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-                new SegmentedLine(0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
-
-        matrix.print(1, frame);
+        matrix.print(10, new SlidingGlyphs(new Size(6, 8), Font6.H, Font6.e, Font6.l, Font6.l, Font6.o, Font6.SPACE, Font6.W, Font6.o, Font6.r, Font6.l, Font6.d, Font6.MARK));
     }
 
     private static Matrix initWithConsoleOutput(Size size) {
