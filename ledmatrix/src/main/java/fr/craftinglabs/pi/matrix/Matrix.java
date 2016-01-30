@@ -1,5 +1,6 @@
 package fr.craftinglabs.pi.matrix;
 
+import fr.craftinglabs.pi.matrix.io.MatrixGPIO;
 import fr.craftinglabs.pi.matrix.io.MatrixIO;
 
 public class Matrix {
@@ -7,6 +8,11 @@ public class Matrix {
     private final MatrixIO io;
 
     private final Size size;
+
+
+    public Matrix(Size size) {
+        this(size, new MatrixGPIO());
+    }
 
     public Matrix(Size size, MatrixIO matrixIO) {
         this.size = size;

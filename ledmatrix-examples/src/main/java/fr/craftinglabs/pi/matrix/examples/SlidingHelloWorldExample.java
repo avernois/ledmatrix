@@ -8,7 +8,7 @@ import fr.craftinglabs.pi.matrix.font.Font6;
 import fr.craftinglabs.pi.matrix.io.ConsoleMatrixIO;
 import fr.craftinglabs.pi.matrix.io.MatrixGPIO;
 
-public class SlidingGlyphsExample {
+public class SlidingHelloWorldExample {
  
     public static void main(String[] args) throws InterruptedException {
 
