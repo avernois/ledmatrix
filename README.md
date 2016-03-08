@@ -1,6 +1,6 @@
 # Led Matrix on Raspberry Pi with java
 
-LedMatrix is a library to manage a simple led matrix
+LedMatrix is a library to manage a simple led matrix using gpio of a Raspberry Pi.
 
 ## The matrix
 This library is meant to drive led matrix using shift registers to address columns and a decade counter for scanning lines.
@@ -16,7 +16,7 @@ It require five GPIO pins:
     * 'CounterClock' default is GPIO04
     * 'CounterReset' default is GPIO05
 
-As we rely on the awesome (Pi4j)[http://pi4j.com] we follow the same pin numbering schema, which is the same as wiringpi. 
+As we rely on the awesome [Pi4j](http://pi4j.com) we follow the same pin numbering schema, which is the same as wiringpi. 
 Details can be found in documentation of [Pi4j](http://pi4j.com/usage.html#Pin_Numbering) and [wiringpi](http://wiringpi.com/pins/).
 
 ## Installation
@@ -88,7 +88,7 @@ The first parameter of the 'print' method defined how many time the frame will b
 On that kind of matrix, there is only one line light up at a given time. The fact that we see them all is an optical trick due to the line switching fast enough.
 On a raspberry pi 2 that does nothing else, there are around 30000 lines printed per second.
 
-The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix/src/main/java/fr/craftinglabs/pi/matrix/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix-examples/src/main/java/fr/craftinglabs/pi/matrix/examples/SlidingHelloWorlExample.java).
+The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix/src/main/java/fr/craftinglabs/pi/matrix/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix-examples/src/main/java/fr/craftinglabs/pi/matrix/examples/SlidingHelloWorldExample.java).
 
 ## Licence
 The MIT License (MIT)
