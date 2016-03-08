@@ -91,6 +91,8 @@ On a raspberry pi 2 that does nothing else, there are around 30000 lines printed
 The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See 'SlidingGlyphs' and 'SlidingHelloWorldExample'.
 
 ## Licence
+The MIT License (MIT)
 
+Copyright (c) 2016 Antoine Vernois
 
-
+See [LICENCE](LICENCE)
