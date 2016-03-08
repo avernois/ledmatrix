@@ -1,6 +1,7 @@
 package fr.craftinglabs.pi.matrix.io;
 
 import com.pi4j.io.gpio.*;
+import com.pi4j.wiringpi.GpioUtil;
 import com.pi4j.wiringpi.Shift;
 
 public class MatrixGPIO implements MatrixIO {
@@ -17,6 +18,7 @@ public class MatrixGPIO implements MatrixIO {
     }
 
     public MatrixGPIO(Pin shiftDataPin, Pin shiftClockPin, Pin shiftLatchPin, Pin counterClockPin, Pin counterResetPin) {
+        GpioUtil.enableNonPrivilegedAccess();
         final GpioController gpio = GpioFactory.getInstance();
 
         shiftData = gpio.provisionDigitalOutputPin(shiftDataPin, "Shift Data", PinState.LOW);
@@ -56,6 +58,7 @@ public class MatrixGPIO implements MatrixIO {
 
     public void releaseShift() {
         upDown(shiftLatch);
+
     }
 
     public void shiftLine(byte value) {
