@@ -88,7 +88,7 @@ The first parameter of the 'print' method defined how many time the frame will b
 On that kind of matrix, there is only one line light up at a given time. The fact that we see them all is an optical trick due to the line switching fast enough.
 On a raspberry pi 2 that does nothing else, there are around 30000 lines printed per second.
 
-The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See 'SlidingGlyphs' and 'SlidingHelloWorldExample'.
+The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix/src/main/java/fr/craftinglabs/pi/matrix/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix-examples/src/main/java/fr/craftinglabs/pi/matrix/examples/SlidingHelloWorlExample.java).
 
 ## Licence
 The MIT License (MIT)

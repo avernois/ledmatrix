@@ -13,6 +13,8 @@
     <artifactId>ledmatrix-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+
+
     <dependencies>
         <dependency>
             <groupId>fr.craftinglabs.pi</groupId>
@@ -48,4 +50,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>crafting-labs-repo</id>
+            <name>Crafting Labs maven repository</name>
+            <url>http://maven.crafting-labs.fr/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
