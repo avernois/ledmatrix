@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>fr.craftinglabs.pi</groupId>
-    <artifactId>ledmatrix-parent</artifactId>
+    <artifactId>ledmatrix4j-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Led Matrix parent pom</name>
     <packaging>pom</packaging>
@@ -18,15 +18,14 @@
     <properties>
         <hamcrest.version>1.3</hamcrest.version>
         <junit.version>4.12</junit.version>
-
         <pi4j.version>1.1-SNAPSHOT</pi4j.version>
     </properties>
 
 
 
     <modules>
-        <module>ledmatrix</module>
-        <module>ledmatrix-examples</module>
+        <module>ledmatrix4j</module>
+        <module>ledmatrix4j-examples</module>
     </modules>
 
     <dependencies>

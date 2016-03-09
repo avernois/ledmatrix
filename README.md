@@ -1,6 +1,6 @@
-# Led Matrix on Raspberry Pi with java
+# LedMatrix4j on Raspberry Pi with java
 
-LedMatrix is a library to manage a simple led matrix using gpio of a Raspberry Pi.
+ledmatrix4j is a library to manage a simple led matrix using gpio of a Raspberry Pi.
 
 ## The matrix
 This library is meant to drive led matrix using shift registers to address columns and a decade counter for scanning lines.
@@ -40,7 +40,7 @@ The following dependency is all you need to use ledmatrix4j:
     <dependencies>
         <dependency>
             <groupId>fr.craftinglabs.pi</groupId>
-            <artifactId>ledmatrix</artifactId>
+            <artifactId>ledmatrix4j</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
@@ -53,7 +53,6 @@ note that currently, there is only a SNAPSHOT version available. A 0.1 release s
 If you followed the default wiring (see above) for your matrix, then it's quite easy
 
     Matrix matrix = new Matrix(new Size(32, 10));
-    
     
 Otherwise, you'll have to first built a MatrixGPIO object with the correct pin.
 For example:
@@ -88,7 +87,7 @@ The first parameter of the 'print' method define how many time the frame will be
 On that kind of matrix, there is only one line light up at a given time. The fact that we see them all is an optical trick due to the line switching fast enough.
 On a raspberry pi 2 that does nothing else, there are around 30000 lines printed per second.
 
-The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix/src/main/java/fr/craftinglabs/pi/matrix/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix-examples/src/main/java/fr/craftinglabs/pi/matrix/examples/SlidingHelloWorldExample.java).
+The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix4j/src/main/java/fr/craftinglabs/pi/ledmatrix4j/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix4j-examples/src/main/java/fr/craftinglabs/pi/ledmatrix4j/examples/SlidingHelloWorldExample.java).
 
 
 ## Caution
