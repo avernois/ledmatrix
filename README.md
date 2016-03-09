@@ -83,12 +83,18 @@ Then, you can print it.
 
     matrix.print(100, checkeredFrame);
     
-The first parameter of the 'print' method defined how many time the frame will be displayed. The bigger, the longer.
+The first parameter of the 'print' method define how many time the frame will be displayed. The bigger, the longer.
 
 On that kind of matrix, there is only one line light up at a given time. The fact that we see them all is an optical trick due to the line switching fast enough.
 On a raspberry pi 2 that does nothing else, there are around 30000 lines printed per second.
 
 The 'print' can also take an 'Iterable<Frame>' as argument (instead of the Frame), this is more convenient to build animation. See ['SlidingGlyphs'](ledmatrix/src/main/java/fr/craftinglabs/pi/matrix/frame/SlidingGlyphs.java) and ['SlidingHelloWorldExample'](ledmatrix-examples/src/main/java/fr/craftinglabs/pi/matrix/examples/SlidingHelloWorldExample.java).
+
+
+## Caution
+
+* This is a work in progress, you can expect everything above MatrixIO to change radically in the next few days/weeks :)
+* This rely on Pi4j 1.1-SNAPSHOT, so not an official release that may change too.
 
 ## Licence
 The MIT License (MIT)
