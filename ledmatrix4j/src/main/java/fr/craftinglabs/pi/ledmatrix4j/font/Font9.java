@@ -551,8 +551,8 @@ public class Font9 {
             "0000000",
             "0000000");
     static public final Glyph NUM1 = new Glyph('1',
-            "00110000",
-            "01110000",
+            "0011000",
+            "0111000",
             "0011000",
             "0011000",
             "0011000",
@@ -671,7 +671,7 @@ public class Font9 {
             "00000",
             "00000");
     static public final Glyph BACKSLASH = new Glyph('\\',
-            "1100000 0",
+            "110000000",
             "011000000",
             "001100000",
             "000110000",
