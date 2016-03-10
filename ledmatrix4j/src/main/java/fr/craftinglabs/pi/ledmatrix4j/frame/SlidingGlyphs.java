@@ -6,6 +6,7 @@ import fr.craftinglabs.pi.ledmatrix4j.font.Line;
 
 
 import java.util.Iterator;
+import java.util.List;
 
 public class SlidingGlyphs implements Iterable<Frame> {
 
@@ -13,8 +14,7 @@ public class SlidingGlyphs implements Iterable<Frame> {
 
     private final Size matrixSize;
 
-
-    public SlidingGlyphs(Size matrixSize, Glyph... glyphs) {
+    public SlidingGlyphs(Size matrixSize, List<Glyph> glyphs) {
         this.matrixSize = matrixSize;
 
         concatGlyphsWithSpace(matrixSize, glyphs);
@@ -25,7 +25,8 @@ public class SlidingGlyphs implements Iterable<Frame> {
         return new SlidingSymbolsIterator(matrixSize, fullText);
     }
 
-    private void concatGlyphsWithSpace(Size matrixSize, Glyph[] glyphs) {
+
+    private void concatGlyphsWithSpace(Size matrixSize, List<Glyph> glyphs) {
         fullText = new Line[matrixSize.getHeight()];
         Glyph emptyGlyph = emptyGlyph(matrixSize);
 
