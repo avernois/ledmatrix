@@ -540,7 +540,7 @@ public class Font9 {
             "11111110",
             "00000000",
             "00000000");
-    static public final Glyph NUM0 = new Glyph('1',
+    static public final Glyph NUM0 = new Glyph('0',
             "0111100",
             "1100110",
             "1100110",
