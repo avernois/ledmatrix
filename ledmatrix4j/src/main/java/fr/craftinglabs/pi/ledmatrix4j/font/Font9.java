@@ -1,6 +1,8 @@
 package fr.craftinglabs.pi.ledmatrix4j.font;
 
-public class Font9 extends Font {
+import java.util.Arrays;
+
+public class Font9 {
 
     static public final Glyph A = new Glyph('A',
             "00111000",
@@ -538,7 +540,7 @@ public class Font9 extends Font {
             "11111110",
             "00000000",
             "00000000");
-    static public final Glyph NUM0 = new Glyph('1',
+    static public final Glyph NUM0 = new Glyph('0',
             "0111100",
             "1100110",
             "1100110",
@@ -549,8 +551,8 @@ public class Font9 extends Font {
             "0000000",
             "0000000");
     static public final Glyph NUM1 = new Glyph('1',
-            "00110000",
-            "01110000",
+            "0011000",
+            "0111000",
             "0011000",
             "0011000",
             "0011000",
@@ -669,7 +671,7 @@ public class Font9 extends Font {
             "00000",
             "00000");
     static public final Glyph BACKSLASH = new Glyph('\\',
-            "1100000 0",
+            "110000000",
             "011000000",
             "001100000",
             "000110000",
@@ -911,95 +913,14 @@ public class Font9 extends Font {
             "0000000",
             "0000000");
 
-    static {
-            add(Font9.A);
-        add(Font9.B);
-        add(Font9.C);
-        add(Font9.D);
-        add(Font9.E);
-        add(Font9.F);
-        add(Font9.G);
-        add(Font9.H);
-        add(Font9.I);
-        add(Font9.J);
-        add(Font9.K);
-        add(Font9.L);
-        add(Font9.M);
-        add(Font9.N);
-        add(Font9.O);
-        add(Font9.P);
-        add(Font9.Q);
-        add(Font9.R);
-        add(Font9.S);
-        add(Font9.T);
-        add(Font9.U);
-        add(Font9.V);
-        add(Font9.W);
-        add(Font9.X);
-        add(Font9.Y);
-        add(Font9.Z);
-        add(Font9.a);
-        add(Font9.b);
-        add(Font9.c);
-        add(Font9.d);
-        add(Font9.e);
-        add(Font9.f);
-        add(Font9.g);
-        add(Font9.h);
-        add(Font9.i);
-        add(Font9.j);
-        add(Font9.k);
-        add(Font9.l);
-        add(Font9.m);
-        add(Font9.n);
-        add(Font9.o);
-        add(Font9.p);
-        add(Font9.q);
-        add(Font9.r);
-        add(Font9.s);
-        add(Font9.t);
-        add(Font9.u);
-        add(Font9.v);
-        add(Font9.w);
-        add(Font9.x);
-        add(Font9.y);
-        add(Font9.z);
-        add(Font9.NUM0);
-        add(Font9.NUM1);
-        add(Font9.NUM2);
-        add(Font9.NUM3);
-        add(Font9.NUM4);
-        add(Font9.NUM5);
-        add(Font9.NUM6);
-        add(Font9.NUM7);
-        add(Font9.NUM8);
-        add(Font9.NUM9);
-        add(Font9.DASH);
-        add(Font9.SLASH);
-        add(Font9.DOT);
-        add(Font9.COLON);
-        add(Font9.COMMA);
-        add(Font9.SPACE);
-        add(Font9.QUESTION);
-        add(Font9.EXCLAMATION);
-        add(Font9.BACKSLASH);
-        add(Font9.AMPERSAND);
-        add(Font9.APOSTROPHE);
-        add(Font9.AROBASE);
-        add(Font9.ASTERISK);
-        add(Font9.BRACKET_CLOSE);
-        add(Font9.BRACKET_OPEN);
-        add(Font9.CURLY_OPEN);
-        add(Font9.CURLY_CLOSE);
-        add(Font9.DOLLAR);
-        add(Font9.TILDE);
-        add(Font9.UNDERSCORE);
-        add(Font9.SEMI_COLON);
-        add(Font9.SHARP);
-        add(Font9.QUOTATION);
-        add(Font9.PERCENT);
-        add(Font9.PARENTHESE_CLOSE);
-        add(Font9.PARENTHESE_OPEN);
-        add(Font9.EURO);
+
+    static private final Font font = new Font(Arrays.asList(A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+                                           a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+                                           NUM0, NUM1, NUM2, NUM3, NUM4, NUM5, NUM6, NUM7, NUM8, NUM9,
+                                           DASH,SLASH,DOT,COLON,COMMA,SPACE,QUESTION,EXCLAMATION,BACKSLASH,AMPERSAND,APOSTROPHE,AROBASE,ASTERISK,BRACKET_CLOSE,BRACKET_OPEN,CURLY_OPEN,CURLY_CLOSE,DOLLAR,TILDE,UNDERSCORE,SEMI_COLON,SHARP,QUOTATION,PERCENT,PARENTHESE_CLOSE, PARENTHESE_OPEN, EURO
+                                           ));
+
+    static public final Font font() {
+        return font;
     }
 }

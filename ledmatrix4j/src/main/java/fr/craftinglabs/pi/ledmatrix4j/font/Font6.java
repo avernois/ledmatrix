@@ -1,6 +1,8 @@
 package fr.craftinglabs.pi.ledmatrix4j.font;
 
-public class Font6 extends Font {
+import java.util.Arrays;
+
+public class Font6 {
 
     static final public Glyph A = new Glyph('A',
             "011100",
@@ -563,76 +565,12 @@ public class Font6 extends Font {
             "00000",
             "00100");
 
-    static {
-        add(Font6.A);
-        add(Font6.B);
-        add(Font6.C);
-        add(Font6.D);
-        add(Font6.E);
-        add(Font6.F);
-        add(Font6.G);
-        add(Font6.H);
-        add(Font6.I);
-        add(Font6.J);
-        add(Font6.K);
-        add(Font6.L);
-        add(Font6.M);
-        add(Font6.N);
-        add(Font6.O);
-        add(Font6.P);
-        add(Font6.Q);
-        add(Font6.R);
-        add(Font6.S);
-        add(Font6.T);
-        add(Font6.U);
-        add(Font6.V);
-        add(Font6.W);
-        add(Font6.X);
-        add(Font6.Y);
-        add(Font6.Z);
-        add(Font6.a);
-        add(Font6.b);
-        add(Font6.c);
-        add(Font6.d);
-        add(Font6.e);
-        add(Font6.f);
-        add(Font6.g);
-        add(Font6.h);
-        add(Font6.i);
-        add(Font6.j);
-        add(Font6.k);
-        add(Font6.l);
-        add(Font6.m);
-        add(Font6.n);
-        add(Font6.o);
-        add(Font6.p);
-        add(Font6.q);
-        add(Font6.r);
-        add(Font6.s);
-        add(Font6.t);
-        add(Font6.u);
-        add(Font6.v);
-        add(Font6.w);
-        add(Font6.x);
-        add(Font6.y);
-        add(Font6.z);
-        add(Font6.NUM0);
-        add(Font6.NUM1);
-        add(Font6.NUM2);
-        add(Font6.NUM3);
-        add(Font6.NUM4);
-        add(Font6.NUM5);
-        add(Font6.NUM6);
-        add(Font6.NUM7);
-        add(Font6.NUM8);
-        add(Font6.NUM9);
-        add(Font6.DASH);
-        add(Font6.DIVIDE);
-        add(Font6.DOT);
-        add(Font6.COLUMN);
-        add(Font6.COMA);
-        add(Font6.SPACE);
-        add(Font6.QUESTION);
-        add(Font6.MARK);
+    static final private Font font = new Font(Arrays.asList(A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+                                                            a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+                                                            NUM0, NUM1, NUM2, NUM3, NUM4, NUM5, NUM6, NUM7, NUM8, NUM9,
+                                                            DASH, DIVIDE, DOT, COLUMN, COMA, SPACE, QUESTION, MARK));
+
+    static final public Font font() {
+        return font;
     }
 }
