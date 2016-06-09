@@ -18,6 +18,12 @@ public class Size {
         return length;
     }
 
+
+    @Override
+    public String toString() {
+        return height + "x" + length;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
