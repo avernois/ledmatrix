@@ -13,7 +13,7 @@ public class Frame {
 
     public Frame(SegmentedLine... lines) {
         this.lines.addAll(Arrays.asList(lines));
-        size = new Size(lines.length, lines[0].segments().size()*Segment.SIZE);
+        size = new Size(lines.length, lines[0].length());
     }
 
     public Frame(String... lines) {

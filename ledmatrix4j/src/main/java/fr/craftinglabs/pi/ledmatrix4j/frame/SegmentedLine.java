@@ -80,4 +80,8 @@ public class SegmentedLine {
                 throw new IllegalArgumentException("Should only be constructed with 0 or 1 but received " + c);
         }
     }
+
+    public int length() {
+        return segments().size() * Segment.SIZE;
+    }
 }
