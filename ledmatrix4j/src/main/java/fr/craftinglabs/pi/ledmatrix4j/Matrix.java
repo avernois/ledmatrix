@@ -6,28 +6,32 @@ import fr.craftinglabs.pi.ledmatrix4j.frame.SegmentedLine;
 import fr.craftinglabs.pi.ledmatrix4j.io.MatrixGPIO;
 import fr.craftinglabs.pi.ledmatrix4j.io.MatrixIO;
 
+import java.time.Duration;
+
 public class Matrix {
 
     private final MatrixIO io;
+    private final SequenceRepeater sequenceRepeater;
 
     private final Size size;
 
 
     public Matrix(Size size) {
-        this(size, new MatrixGPIO());
+        this(size, new MatrixGPIO(), new SequenceRepeater());
     }
 
-    public Matrix(Size size, MatrixIO matrixIO) {
+    public Matrix(Size size, MatrixIO matrixIO, SequenceRepeater sequenceRepeater) {
         this.size = size;
         this.io = matrixIO;
+        this.sequenceRepeater = sequenceRepeater;
         clearLine();
     }
 
     public void print(int speed, Frame frame) {
-        for (int i = 0; i < speed; i++) {
+        sequenceRepeater.Run(() -> {
             goFirstLine();
             printFrame(frame);
-        }
+        }, Duration.ofMillis(speed));
     }
 
     public void print(int speed, Iterable<Frame> frames) {

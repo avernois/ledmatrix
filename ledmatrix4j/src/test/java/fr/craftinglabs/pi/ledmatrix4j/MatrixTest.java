@@ -4,6 +4,8 @@ import fr.craftinglabs.pi.ledmatrix4j.frame.Frame;
 import fr.craftinglabs.pi.ledmatrix4j.io.MatrixIO;
 import org.junit.Test;
 
+import java.time.Duration;
+
 import static org.junit.Assert.*;
 
 public class MatrixTest {
@@ -18,7 +20,7 @@ public class MatrixTest {
                 .clearLine()
                 .goNextLine()
                 .build();
-        Matrix matrix = new Matrix(new Size(1, 8), recordedMatrixIO);
+        Matrix matrix = new Matrix(new Size(1, 8), recordedMatrixIO, new SequenceRepeaterFake());
 
         matrix.print(1, new Frame("11111111"));
 
@@ -38,11 +40,32 @@ public class MatrixTest {
                 .clearLine()
                 .goNextLine()
                 .build();
-        Matrix matrix = new Matrix(new Size(2, 8), recordedMatrixIO);
+        Matrix matrix = new Matrix(new Size(2, 8), recordedMatrixIO, new SequenceRepeaterFake());
 
         matrix.print(1, new Frame("11111111", "10000000"));
 
         assertEquals(expected.toString(), recordedMatrixIO.getRecord());
+    }
+
+    @Test
+    public void should_ask_SequencerRepeater_to_display_frame(){
+        RecordedMatrixIO recordedMatrixIO = new RecordedMatrixIO();
+        String expected = anExpectedRecord()
+                .clearLine()
+                .goFirstLine()
+                .shiftLine((byte) 255)
+                .clearLine()
+                .goNextLine()
+                .build();
+        SequenceRepeaterSpy repeater = new SequenceRepeaterSpy();
+        Matrix matrix = new Matrix(new Size(1, 8), recordedMatrixIO, repeater);
+
+        matrix.print(100, new Frame("11111111"));
+
+        assertNotEquals(expected.toString(), recordedMatrixIO.getRecord());
+        repeater.action.execute();
+        assertEquals(expected.toString(), recordedMatrixIO.getRecord());
+        assertEquals(100, repeater.duration.toMillis());
     }
 
     private ExpectedRecordBuilder anExpectedRecord() {
@@ -109,6 +132,24 @@ public class MatrixTest {
 
         public String getRecord() {
             return record.toString();
+        }
+    }
+
+    private class SequenceRepeaterFake extends SequenceRepeater {
+        @Override
+        public void Run(Action action, Duration duration) {
+            action.execute();
+        }
+    }
+
+    private class SequenceRepeaterSpy extends SequenceRepeater {
+        public Action action;
+        public Duration duration;
+
+        @Override
+        public void Run(Action action, Duration duration) {
+            this.action = action;
+            this.duration = duration;
         }
     }
 }
