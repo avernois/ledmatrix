@@ -84,4 +84,13 @@ public class SegmentedLine {
     public int length() {
         return segments().size() * Segment.SIZE;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for(Segment segment: segments()) {
+            builder.append(segment.toString());
+        }
+        return builder.toString();
+    }
 }
