@@ -2,6 +2,7 @@ package fr.craftinglabs.pi.ledmatrix4j.frame;
 
 import org.junit.Test;
 
+import javax.sound.midi.Sequence;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
@@ -35,5 +36,13 @@ public class SegmentedLineTest {
         SegmentedLine line = new SegmentedLine(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 );
 
         assertEquals(16, line.length());
+    }
+
+    @Test
+    public void should_have_a_string_representation() {
+        String lineRepresentation = "1100110011001100";
+        SegmentedLine line = new SegmentedLine(lineRepresentation);
+
+        assertEquals(lineRepresentation, line.toString());
     }
 }
