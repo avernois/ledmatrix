@@ -22,7 +22,7 @@ public class MatrixTest {
                 .build();
         Matrix matrix = new Matrix(new Size(1, 8), recordedMatrixIO, new SequenceRepeaterFake());
 
-        matrix.print(1, new Frame("11111111"));
+        matrix.print(Duration.ofMillis(1), new Frame("11111111"));
 
         assertEquals(expected.toString(), recordedMatrixIO.getRecord());
     }
@@ -42,7 +42,7 @@ public class MatrixTest {
                 .build();
         Matrix matrix = new Matrix(new Size(2, 8), recordedMatrixIO, new SequenceRepeaterFake());
 
-        matrix.print(1, new Frame("11111111", "10000000"));
+        matrix.print(Duration.ofMillis(1), new Frame("11111111", "10000000"));
 
         assertEquals(expected.toString(), recordedMatrixIO.getRecord());
     }
@@ -59,13 +59,14 @@ public class MatrixTest {
                 .build();
         SequenceRepeaterSpy repeater = new SequenceRepeaterSpy();
         Matrix matrix = new Matrix(new Size(1, 8), recordedMatrixIO, repeater);
+        Duration duration = Duration.ofMillis(100);
 
-        matrix.print(100, new Frame("11111111"));
+        matrix.print(duration, new Frame("11111111"));
 
         assertNotEquals(expected.toString(), recordedMatrixIO.getRecord());
         repeater.action.execute();
         assertEquals(expected.toString(), recordedMatrixIO.getRecord());
-        assertEquals(100, repeater.duration.toMillis());
+        assertEquals(duration, repeater.duration);
     }
 
     private ExpectedRecordBuilder anExpectedRecord() {

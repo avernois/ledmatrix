@@ -27,16 +27,16 @@ public class Matrix {
         clearLine();
     }
 
-    public void print(int speed, Frame frame) {
+    public void print(Duration duration, Frame frame) {
         sequenceRepeater.Run(() -> {
             goFirstLine();
             printFrame(frame);
-        }, Duration.ofMillis(speed));
+        }, duration);
     }
 
-    public void print(int speed, Iterable<Frame> frames) {
+    public void print(Duration delayByFrame, Iterable<Frame> frames) {
         for(Frame frame: frames) {
-            print(speed, frame);
+            print(delayByFrame, frame);
         }
     }
 
