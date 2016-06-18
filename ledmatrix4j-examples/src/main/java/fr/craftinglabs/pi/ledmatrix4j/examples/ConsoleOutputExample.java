@@ -15,6 +15,6 @@ public class ConsoleOutputExample {
 
         Matrix matrix = new Matrix(new Size(6, 8), new ConsoleMatrixIO(), new SequenceRepeater());
 
-        matrix.print(10, new SlidingGlyphs(new Size(6, 8), Arrays.asList(Font6.H, Font6.e, Font6.l, Font6.l, Font6.o, Font6.SPACE, Font6.W, Font6.o, Font6.r, Font6.l, Font6.d, Font6.MARK)));
+        matrix.print(100, new SlidingGlyphs(new Size(6, 8), Arrays.asList(Font6.H, Font6.e, Font6.l, Font6.l, Font6.o, Font6.SPACE, Font6.W, Font6.o, Font6.r, Font6.l, Font6.d, Font6.MARK)));
     }
 }
