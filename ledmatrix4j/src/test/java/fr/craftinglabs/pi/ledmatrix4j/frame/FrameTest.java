@@ -1,5 +1,6 @@
 package fr.craftinglabs.pi.ledmatrix4j.frame;
 
+import fr.craftinglabs.pi.ledmatrix4j.Size;
 import fr.craftinglabs.pi.ledmatrix4j.font.Line;
 import org.junit.Test;
 
@@ -46,4 +47,30 @@ public class FrameTest {
                 frame.toLines());
 
     }
+
+    @Test public void
+    should_have_a_size_when_build_from_Lines() {
+        Frame frame = new Frame(
+                new Line("0101"),
+                new Line("1010"));
+
+        assertEquals(new Size(2, 4), frame.size());
+    }
+
+    @Test public void
+    should_have_a_size_when_build_from_Strings() {
+        Frame frame = new Frame( "0101",
+                                 "1010");
+
+        assertEquals(new Size(2, 4), frame.size());
+    }
+
+    @Test public void
+    should_have_a_size_when_build_from_SegmentedLines() {
+        Frame frame = new Frame( new SegmentedLine("01010101"),
+                                 new SegmentedLine("10101010"));
+
+        assertEquals(new Size(2, 8), frame.size());
+    }
+
 }
